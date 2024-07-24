@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   userName: string;
 
-  constructor(private rota: Router) {
-
-  }
+  constructor(private rota: Router) {}
 
   login() {
     sessionStorage.setItem('user', this.userName);
