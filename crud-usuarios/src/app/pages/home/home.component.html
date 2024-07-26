@@ -7,7 +7,7 @@
                 <!-- Primeiro card -->
                 <div class="row">
                     <div class="col-12 col-md-8">
-                        <h1 class="Titulo">Crud Users</h1>
+                        <h1 class="titulo">Crud Users</h1>
                         <h3 class="subtitulo">Mais eficiência na gestão dos <span>usuários</span> e de seus benefícios.
                         Chega de sistemas antigos e sem usabilidade, agora com o <span>Crud Users</span> seu trabalho fica
                         até 3x mais rápido e simplificado.<br>
@@ -16,7 +16,7 @@
                         <app-button textButton="Iniciar" routerLink="/usuarios"></app-button>
                     </div>
                     <div class="col-12 col-md-4">
-                        <img src="../../../assets/dashboard.png" alt="Imagem do dashboard" width="100%">
+                        <img src="../../../assets/dashboard.png" alt="Imagem do dashboard" width="80%" class="image-dashboard">
                     </div>
                 </div>
             </div>
@@ -55,7 +55,42 @@
                     </div>
                 </div>
 
+                <!-- Card de usuário cadastrado -->
+                 <div class="col-12 mt-4">
+                    <div class="card-info">
+                        <h3 class="titulo">Ultimo usuário cadastrado</h3>
+                        <hr class="hr">
+                        <div class="row">
+                            <div class="col-1"> <mat-icon>account_circle</mat-icon> </div>
+                            <div class="col-1"> <p class="texto-p">1</p> </div>
+                            <div class="col"> <p class="texto-p">{{userName}}</p> </div>
+                            <div class="col"> <p class="texto-p">Desenvolvedor Front-End</p> </div>
+                        </div>
+                    </div>
+                 </div>
+
             </div>
         </div>
+        <!-- Lado direito da tela -->
+        <div class="col-12 col-lg-3">
+            <div class="card-info">
+                <div class="container-perfil">
+                    <img src="../../../assets/img-perfil.png" alt="Foto de perfil" class="img-perfil">
+                    <h4>Seja bem vindo</h4>
+                    <h5>{{userName}}</h5>
+                    <li> <mat-icon>location_on</mat-icon> SC - Brasil </li>
+                </div>
+                <hr class="hr">
+                <div class="texto-p">"Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Ipsum ex sequi quibusdam! Nihil, iste sapiente sed dolorem animi at delectus 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit."</div>
+                <hr class="hr">
+                <li> <mat-icon>person</mat-icon>Gerencie usuários</li>
+                <li> <mat-icon>sell</mat-icon>Adicione benefícios</li>
+                <li> <mat-icon>format_list_bulleted</mat-icon>Consulte cadastros</li>
+                <li> <mat-icon>delete</mat-icon>Exclua funcionários</li>
+            </div>
+        </div>
+
     </div>
 </div>

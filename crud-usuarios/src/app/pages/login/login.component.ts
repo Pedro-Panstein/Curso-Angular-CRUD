@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,8 +12,11 @@ export class LoginComponent {
   constructor(private rota: Router) {}
 
   login() {
-    sessionStorage.setItem('user', this.userName);
-
-    this.rota.navigate(['home'])
+    if (this.userName === undefined) {
+      alert("Digite um nome")
+    } else {
+      sessionStorage.setItem('user', this.userName);
+      this.rota.navigate(['home'])
+    }
   }
 }
