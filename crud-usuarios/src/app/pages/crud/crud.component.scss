@@ -39,11 +39,12 @@ td-table{
 .icone-tabela{
     color: #767676;
     margin-right: 10px;
-    transition: 0.2s linear all;
+    transform: rotate(0deg);
+    transition: 0.4s linear all;
     &:hover{
         cursor: pointer;
         color: var(--primary-color);
-        transform: scale(1.1);
+        transform: rotate(359deg);
     }
 }
 
@@ -51,10 +52,10 @@ td-table{
     color: #767676;
     margin-right: 10px;
     transform: rotate(0deg);
-    transition: 0.2s linear all;
+    transition: 0.4s linear all;
     &:hover{
         cursor: pointer;
         color: var(--error-color);
-        transform: scale(1.1);
+        transform: rotate(359deg);
     }
 }
