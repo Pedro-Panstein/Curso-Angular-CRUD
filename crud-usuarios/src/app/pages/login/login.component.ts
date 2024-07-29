@@ -14,6 +14,8 @@ export class LoginComponent {
   login() {
     if (this.userName === undefined) {
       alert("Digite um nome")
+    } else if (this.userName.length > 35) {
+      alert("O limite de caracteres é 35")
     } else {
       sessionStorage.setItem('user', this.userName);
       this.rota.navigate(['home'])
