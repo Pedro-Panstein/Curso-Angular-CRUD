@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './pages/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ModalViewComponent } from './pages/crud/modal-view/modal-view.component';
@@ -26,7 +26,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-user.component';
-import { ModalDeleteComponent } from './pages/crud/modal-delete/modal-delete.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,13 +38,14 @@ import { ModalDeleteComponent } from './pages/crud/modal-delete/modal-delete.com
     CrudComponent,
     ModalViewComponent,
     ModalFormUserComponent,
-    ModalDeleteComponent
+    ModalDeleteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     // Angular Material
     MatIconModule,
     MatFormFieldModule,
@@ -54,6 +55,7 @@ import { ModalDeleteComponent } from './pages/crud/modal-delete/modal-delete.com
     MatSortModule, 
     MatPaginatorModule,
     MatDialogModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
