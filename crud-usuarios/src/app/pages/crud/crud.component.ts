@@ -4,6 +4,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { User } from '../../interfaces/user';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalViewComponent } from './modal-view/modal-view.component';
+import { ModalFormUserComponent } from './modal-form-user/modal-form-user.component';
+import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 
 @Component({
   selector: 'app-crud',
@@ -19,7 +23,10 @@ export class CrudComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private usersService: UsersService) {
+  constructor(
+    private usersService: UsersService,
+    public dialog: MatDialog,
+  ) {
     this.dataSource = new MatTableDataSource<any>(this.listusers);
   }
 
@@ -57,4 +64,28 @@ export class CrudComponent {
     }
   }
 
+  // Logica do modal
+  openModalView(user: User){
+    this.dialog.open(ModalViewComponent, {
+       width: '700px',
+       height: '330px',
+       data: user,
+    })
+  }
+
+  openModalEdit(user: User){
+    this.dialog.open(ModalFormUserComponent, {
+      width: '700px',
+      height: '300px',
+      data: user,
+    })
+  }
+
+  openModalDelete(user: User){
+    this.dialog.open(ModalDeleteComponent, {
+      width: '500px',
+      height: '200px',
+      data: user,
+    })
+  }
 }

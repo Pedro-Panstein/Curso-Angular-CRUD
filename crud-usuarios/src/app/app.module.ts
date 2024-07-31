@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ModalViewComponent } from './pages/crud/modal-view/modal-view.component';
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore'
@@ -23,6 +24,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-user.component';
+import { ModalDeleteComponent } from './pages/crud/modal-delete/modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    CrudComponent
+    CrudComponent,
+    ModalViewComponent,
+    ModalFormUserComponent,
+    ModalDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +53,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule, 
     MatSortModule, 
     MatPaginatorModule,
+    MatDialogModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
