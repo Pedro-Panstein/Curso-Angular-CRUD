@@ -38,7 +38,6 @@ import { MatSelectModule } from '@angular/material/select';
     CrudComponent,
     ModalViewComponent,
     ModalFormUserComponent,
-    ModalDeleteComponent,
   ],
   imports: [
     BrowserModule,
