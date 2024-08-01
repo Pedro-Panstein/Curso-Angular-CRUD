@@ -39,23 +39,23 @@ td-table{
 .icone-tabela{
     color: #767676;
     margin-right: 10px;
-    transform: rotate(0deg);
-    transition: 0.4s linear all;
+    transform: scale(1);
+    transition: 0.2s linear all;
     &:hover{
         cursor: pointer;
         color: var(--primary-color);
-        transform: rotate(359deg);
+        transform: scale(1.1);;
     }
 }
 
 .icone-tabela-delete{
     color: #767676;
     margin-right: 10px;
-    transform: rotate(0deg);
-    transition: 0.4s linear all;
+    transform: scale(1);
+    transition: 0.2s linear all;
     &:hover{
         cursor: pointer;
         color: var(--error-color);
-        transform: rotate(359deg);
+        transform: scale(1.1);
     }
 }
