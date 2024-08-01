@@ -10,7 +10,7 @@
 
     <div class="row mt-2">
         <div class="col-12">
-            <app-button class="float-end" textButton="+ cadastrar" (click)="openModalAddUser()"></app-button>
+            <app-button class="float-end" textButton="+ cadastrar"></app-button>
 
             <mat-form-field>
                 <mat-label>Filtro</mat-label>
@@ -61,8 +61,8 @@
                     <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> </th>
                     <td class="td-table" mat-cell *matCellDef="let user">
                         <mat-icon class="icone-tabela" (click)="openModalView(user)">visibility</mat-icon>
-                        <mat-icon class="icone-tabela" (click)="openModalEditUser(user)">edit</mat-icon>
-                        <mat-icon class="icone-tabela-delete" (click)="deleteUser(user.firebaseId)">delete</mat-icon>
+                        <mat-icon class="icone-tabela" (click)="openModalEdit(user)">edit</mat-icon>
+                        <mat-icon class="icone-tabela-delete" (click)="openModalDelete(user)">delete</mat-icon>
                     </td>
                   </ng-container>
             

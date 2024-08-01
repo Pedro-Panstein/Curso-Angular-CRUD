@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalViewComponent } from './modal-view/modal-view.component';
 import { ModalFormUserComponent } from './modal-form-user/modal-form-user.component';
+import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 
 @Component({
   selector: 'app-crud',
@@ -38,15 +39,6 @@ export class CrudComponent {
     this.dataSource.sort = this.sort;
   }
 
-  deleteUser(firebaseId: string) {
-    this.usersService.deleteUser(firebaseId).then((response: any) => {
-      window.alert('Usuário excluido com sucesso')
-    }).catch(err => {
-      window.alert('Houve um erro ao tentar excluir esse usuário')
-      console.error(err)
-    })
-  }
-
   getListUsers() {
     this.usersService.getAllUsers().subscribe({
       next: (response: any) => {
@@ -56,7 +48,6 @@ export class CrudComponent {
         this.dataSource = new MatTableDataSource<any>(this.listusers);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        this.paginator._intl.itemsPerPageLabel="Itens por página";
       },
       error: (err) => {
         console.error(err)
@@ -82,19 +73,19 @@ export class CrudComponent {
     })
   }
 
-  openModalAddUser(){
+  openModalEdit(user: User){
     this.dialog.open(ModalFormUserComponent, {
       width: '700px',
-      height: '420px',
-    }).afterClosed().subscribe(() => this.getListUsers())
+      height: '300px',
+      data: user,
+    })
   }
 
-  openModalEditUser(user: User){
-    this.dialog.open(ModalFormUserComponent, {
-      width: '700px',
-      height: '420px',
-      data: user
-    }).afterClosed().subscribe(() => this.getListUsers())
+  openModalDelete(user: User){
+    this.dialog.open(ModalDeleteComponent, {
+      width: '500px',
+      height: '200px',
+      data: user,
+    })
   }
-  
 }
